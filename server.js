@@ -4,6 +4,7 @@ const axios = require("axios");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
+const db = require("./models");
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
@@ -14,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("./client/src"));
 }
 // Add routes, both API and view
-//app.use(routes);
+app.use(routes);
 
 app.get("/scrape", function(req, res) {
   console.log("Scraping initiated");
@@ -28,11 +29,18 @@ app.get("/scrape", function(req, res) {
       $(".header").each(function(i, element) {
         let result = {};
         result.company = $(this).text();
-        //console.log(result);
         $(".reviewSnip").each(function(i, element) {
           //let result = {};
-          result.review = $(this).text();
+          result.reviews = $(this).text();
           console.log(result);
+
+          db.Review.create(result)
+            .then(function(dbReview) {
+              console.log(dbReview);
+            })
+            .catch(function(err) {
+              console.log(err);
+            });
         });
       });
     });

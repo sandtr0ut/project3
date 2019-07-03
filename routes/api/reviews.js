@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const reviewsController = require("../../controllers/reviewsController");
-const axios = require("axios");
 
 // Matches with "/api/books"
 router
