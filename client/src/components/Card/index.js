@@ -5,13 +5,21 @@ import "./style.css";
 // That way we don't have to define them all individually
 function Card(props) {
   return (
-   
-   
-   
-   <span className="delete-btn" {...props} role="button" tabIndex="0">
-      ✗
-    </span>
+    <div className="card" class="card">
+      <div className="jobTitle">
+        {props.title}
+      </div>
+    <div className="img-container">
+      <img 
+        alt={"This is image " + props.id} 
+        src={props.image}
+        onClick={() => props.checkIfClicked(props.id)}
+      />
+    </div>
+  </div>
   );
 }
+
+
 
 export default Card;
