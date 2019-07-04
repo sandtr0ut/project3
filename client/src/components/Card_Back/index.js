@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../Card";
 // import "./style.css";
 
 function CardBack(props) {
@@ -8,7 +9,7 @@ function CardBack(props) {
     <p>
         Descriptive text about the job
     </p>
-    <button onClick={props.handleClick}>Click to flip</button>
+    <button onClick={Card.handleClick}>Click to flip</button>
     </div>
   );
 }
