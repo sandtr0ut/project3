@@ -4,6 +4,7 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Card from "./components/Card";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Books} />
           <Route exact path="/books" component={Books} />
+          <Route exact path="/card" component={Card} />
           <Route exact path="/books/:id" component={Detail} />
           <Route component={NoMatch} />
         </Switch>
