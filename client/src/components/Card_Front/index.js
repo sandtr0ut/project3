@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../Card";
+
 // import "./style.css";
 
 
@@ -10,7 +11,7 @@ function CardFront(props) {
     <h1>Job Title</h1>
     <br></br>
     <h2>Company</h2>
-    <button onClick={Card.handleclick}>Click to flip</button>
+    <button onClick={Card.handleClick}>Click to flip</button>
     </div>
   );
 }

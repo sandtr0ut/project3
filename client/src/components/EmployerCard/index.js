@@ -20,24 +20,14 @@ class Card extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
  
-  handleClick(e) {
-    e.preventDefault();
-    this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
-  }
- 
-
-  render() {
-    return (
-      <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
-        <CardFront key="front">
-        <button onClick={this.handleClick}>Click to flip</button>
-        </CardFront>
- 
-        <CardBack key="back">
-          This is the back of the card.
-          <button onClick={this.handleClick}>Click to flip</button>
-        </CardBack>
-      </ReactCardFlip>
+  function Card(props){
+    return(
+      <div className="card--container container">
+          <h1>Job Title:</h1><br>
+          <h2>Employer:</h2><br>
+          <h2>Salary</h2><br>
+          <h2>Location:</h2><br>
+      </div>
     )
   }
 }
